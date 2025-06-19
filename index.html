@@ -264,8 +264,9 @@
             try {
                 // Effectue une requête GET à l'API Apps Script pour obtenir les données pré-remplies
                 const response = await fetch(`${APP_SCRIPT_API_URL}?action=getPreFillData`);
+                displayMessage("Données pré-remplies chargement en cours1.", "success");
                 const data = await response.json();
-
+ displayMessage("Données pré-remplies chargement en cours2.", "success");
                 if (response.ok && !data.error) {
                     // Remplir les champs du formulaire avec les données reçues
                     document.getElementById('nomComplet').value = data.nomComplet || '';
